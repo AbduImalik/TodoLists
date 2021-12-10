@@ -52,7 +52,7 @@ class AddNewViewController: UIViewController {
             //date creation
             let date = Date()
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yy/MM/dd h:m a"
+            dateFormatter.dateFormat = "yy/MM/dd h:mm a"
 
             dateFormatter.locale = Locale(identifier: "ar")
 
@@ -77,7 +77,7 @@ class AddNewViewController: UIViewController {
             //edit todo
             let date = Date()
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yy/MM/dd h:m a"
+            dateFormatter.dateFormat = "yy/MM/dd h:mm a"
 
             dateFormatter.locale = Locale(identifier: "ar")
 
