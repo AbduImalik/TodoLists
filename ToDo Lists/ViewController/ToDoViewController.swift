@@ -11,7 +11,7 @@ import CoreData
 class ToDoViewController: UIViewController {
 
     var toDoArray : [Todo] = []
-
+    
     @IBOutlet weak var toDoTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +83,8 @@ extension ToDoViewController: UITableViewDataSource,UITableViewDelegate {
             cell.toDoImage.image = UIImage(named: "Image")
         }
         cell.toDoImage.layer.cornerRadius = cell.toDoImage.frame.width / 2
+        
+        cell.toDoDate.text = toDoArray[indexPath.row].date
         return cell
     }
     

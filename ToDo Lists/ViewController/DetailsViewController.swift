@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CleanyModal
 
 class DetailsViewController: UIViewController {
 
@@ -61,26 +62,45 @@ class DetailsViewController: UIViewController {
         
         
         
-        let confirmAlert = UIAlertController(title: "تنبيه", message: "هل تريد حذف المهمة", preferredStyle: UIAlertController.Style.alert)
         
-        let confirmAction = UIAlertAction(title: "تاكيد الحذف", style: UIAlertAction.Style.destructive) { alet in
-            NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TodoDeleted"), object: nil, userInfo: ["currentTodoDeleted":self.index!])
+        let alert = CleanyAlertViewController(title: "تنبيه", message: "هل تريد حذف المهمة",imageName: "warning")
 
-
-            let alert =  UIAlertController(title: "حذف", message: "تم تحذف المهمة", preferredStyle: UIAlertController.Style.alert)
-            let action = UIAlertAction(title: "اغلاق", style: UIAlertAction.Style.default) { alert in
+        alert.addAction(title: "تاكيد الحذف", style: .destructive) { alert in
+            let alertdelete = CleanyAlertViewController(title: "حذف", message: "تم حذف المهمة")
+            alertdelete.addAction(title: "اغلاق", style: .destructive) { alert in
+                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TodoDeleted"), object: nil, userInfo: ["currentTodoDeleted":self.index!])
                 self.navigationController?.popViewController(animated: true)
             }
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: nil)
+            self.present(alertdelete, animated: true, completion: nil)
 
         }
+        alert.addAction(title: "لا", style: .cancel) { alert in
+            self.dismiss(animated: true, completion: nil)
+        }
         
-        let cancelAction = UIAlertAction(title: "الغاء الامر", style: UIAlertAction.Style.default, handler: nil)
+        present(alert, animated: true, completion: nil)
         
-        confirmAlert.addAction(confirmAction)
-        confirmAlert.addAction(cancelAction)
-        present(confirmAlert, animated: true, completion: nil)
+        
+//        let confirmAlert = UIAlertController(title: "تنبيه", message: "هل تريد حذف المهمة", preferredStyle: UIAlertController.Style.alert)
+//
+//        let confirmAction = UIAlertAction(title: "تاكيد الحذف", style: UIAlertAction.Style.destructive) { alet in
+//            NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TodoDeleted"), object: nil, userInfo: ["currentTodoDeleted":self.index!])
+//
+//
+//            let alert =  UIAlertController(title: "حذف", message: "تم تحذف المهمة", preferredStyle: UIAlertController.Style.alert)
+//            let action = UIAlertAction(title: "اغلاق", style: UIAlertAction.Style.default) { alert in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//            alert.addAction(action)
+//            self.present(alert, animated: true, completion: nil)
+//
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "الغاء الامر", style: UIAlertAction.Style.default, handler: nil)
+//
+//        confirmAlert.addAction(confirmAction)
+//        confirmAlert.addAction(cancelAction)
+//        present(confirmAlert, animated: true, completion: nil)
     }
     
 }

@@ -13,5 +13,5 @@ struct Todo{
     var tilte :String
     var image: UIImage? = nil
     var details : String
-    
+    var date : String?
 }

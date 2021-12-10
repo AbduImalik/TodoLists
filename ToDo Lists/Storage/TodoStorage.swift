@@ -18,6 +18,7 @@ class TodoStorage{
         let todoObj = NSManagedObject.init(entity: todoEntity, insertInto: mangedContext)
         todoObj.setValue(todo.tilte, forKey: "title")
         todoObj.setValue(todo.details, forKey: "details")
+        todoObj.setValue(todo.date, forKey: "date")
         if let image = todo.image {
             let imageData = image.jpegData(compressionQuality: 1)
             todoObj.setValue(imageData, forKey: "image")
@@ -48,6 +49,7 @@ class TodoStorage{
                 result[index].setValue(imageData, forKey: "image")
 
             }
+            result[index].setValue(todo.date, forKey: "date")
             try context.save()
             
             
@@ -95,7 +97,8 @@ class TodoStorage{
                     todoImage = UIImage(data: imageFromContext)
                     
                 }
-                let todo = Todo(tilte: title ?? "" ,image: todoImage,details: details ?? "")
+                let date = managedTodo.value(forKey: "date") as? String
+                let todo = Todo(tilte: title ?? "" ,image: todoImage,details: details ?? "",date: date)
                 
                 todos.append(todo)
             }

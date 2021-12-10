@@ -101,26 +101,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJ2-cT-5jX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="220"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-Zs-SX0" userLabel="greenView">
-                                <rect key="frame" x="0.0" y="227" width="320" height="36"/>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-Zs-SX0" userLabel="greenView">
+                                <rect key="frame" x="0.0" y="238" width="320" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="133" translatesAutoresizingMaskIntoConstraints="NO" id="AMK-I7-jrl">
-                                        <rect key="frame" x="5" y="5" width="310" height="26"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="MUW-DN-fOB">
+                                        <rect key="frame" x="8" y="10" width="304" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-lI-vBl">
-                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="26"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="تعديل"/>
-                                                <connections>
-                                                    <action selector="editTodoButtonClicked:" destination="dSO-RN-4QS" eventType="touchUpInside" id="cKK-dA-VGo"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="مشااهدة بث معسكر طويق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1bn-xx-CcP">
-                                                <rect key="frame" x="189.5" y="0.0" width="120.5" height="26"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xhc-0l-FkO">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="31"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-lI-vBl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="39" height="31"/>
+                                                        <color key="backgroundColor" red="0.59110134840011597" green="0.81801575422286987" blue="0.99299043416976929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="pencil" catalog="system" title="" imagePadding="0.0">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="baseBackgroundColor" red="0.59110134840011597" green="0.81801575422286987" blue="0.99299043416976929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="editTodoButtonClicked:" destination="dSO-RN-4QS" eventType="touchUpInside" id="cKK-dA-VGo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjJ-XP-PiT">
+                                                        <rect key="frame" x="47" y="0.0" width="39" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="trash.fill" catalog="system">
+                                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="deleteButtonClicked:" destination="dSO-RN-4QS" eventType="touchUpInside" id="mao-cE-v73"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="معسكر طويق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="1bn-xx-CcP">
+                                                <rect key="frame" x="104" y="0.0" width="200" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="EcK-bD-4yO"/>
+                                                    <constraint firstAttribute="height" constant="31" id="QZr-8p-1Ko"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -130,49 +155,35 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.093138687312602997" green="0.45537471771240234" blue="0.55622202157974243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="AMK-I7-jrl" secondAttribute="bottom" constant="5" id="2za-h0-FhG"/>
-                                    <constraint firstItem="AMK-I7-jrl" firstAttribute="height" secondItem="hgN-Zs-SX0" secondAttribute="height" multiplier="0.72" id="PS1-vV-wEU"/>
-                                    <constraint firstItem="AMK-I7-jrl" firstAttribute="top" secondItem="hgN-Zs-SX0" secondAttribute="top" constant="5" id="UCF-Ep-rON"/>
-                                    <constraint firstItem="AMK-I7-jrl" firstAttribute="leading" secondItem="hgN-Zs-SX0" secondAttribute="leading" constant="5" id="dz9-9i-FdB"/>
-                                    <constraint firstAttribute="trailing" secondItem="AMK-I7-jrl" secondAttribute="trailing" constant="5" id="l9b-M8-YA7"/>
+                                    <constraint firstItem="MUW-DN-fOB" firstAttribute="leading" secondItem="hgN-Zs-SX0" secondAttribute="leading" constant="8" id="CL7-MJ-5xf"/>
+                                    <constraint firstItem="MUW-DN-fOB" firstAttribute="top" secondItem="hgN-Zs-SX0" secondAttribute="top" constant="10" id="KoX-km-4gJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="eu7-cp-z3r"/>
+                                    <constraint firstAttribute="trailing" secondItem="MUW-DN-fOB" secondAttribute="trailing" constant="8" id="gcP-m9-dLQ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value=""/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معسكر طويق هو معسكر سويفت عن بعد" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idQ-z7-wjd">
-                                <rect key="frame" x="10" y="273" width="300" height="21.5"/>
+                                <rect key="frame" x="16" y="296" width="288" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjJ-XP-PiT">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="A23-0Z-dHL"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="حذف">
-                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="deleteButtonClicked:" destination="dSO-RN-4QS" eventType="touchUpInside" id="mao-cE-v73"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kQO-yI-y7t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" id="4fc-o4-wgy"/>
-                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="top" secondItem="kQO-yI-y7t" secondAttribute="top" id="ApS-Bo-NRt"/>
-                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="trailing" secondItem="kQO-yI-y7t" secondAttribute="trailing" id="DyG-a9-2dU"/>
-                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="trailing" secondItem="kQO-yI-y7t" secondAttribute="trailing" id="JUO-H6-dMK"/>
-                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="top" secondItem="jJ2-cT-5jX" secondAttribute="bottom" id="Jg5-Hi-uST"/>
-                            <constraint firstItem="sjJ-XP-PiT" firstAttribute="bottom" secondItem="kQO-yI-y7t" secondAttribute="bottom" id="LqE-9b-gm2"/>
-                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" id="ZAd-lu-tJ3"/>
-                            <constraint firstItem="idQ-z7-wjd" firstAttribute="top" secondItem="hgN-Zs-SX0" secondAttribute="bottom" constant="10" id="Zja-hA-PeZ"/>
-                            <constraint firstItem="sjJ-XP-PiT" firstAttribute="trailing" secondItem="kQO-yI-y7t" secondAttribute="trailing" id="hQN-mh-RwR"/>
-                            <constraint firstItem="sjJ-XP-PiT" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" id="ils-Yb-Rh2"/>
-                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="height" secondItem="hxT-VS-RSQ" secondAttribute="height" multiplier="0.4" id="j8o-9Q-Bde"/>
-                            <constraint firstItem="kQO-yI-y7t" firstAttribute="trailing" secondItem="idQ-z7-wjd" secondAttribute="trailing" constant="10" id="ugb-wh-f9j"/>
-                            <constraint firstItem="idQ-z7-wjd" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" constant="10" id="yB0-qO-aHN"/>
+                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" id="2HN-F4-OuL"/>
+                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" id="3da-Rx-R0X"/>
+                            <constraint firstItem="idQ-z7-wjd" firstAttribute="leading" secondItem="kQO-yI-y7t" secondAttribute="leading" constant="16" id="849-ZP-LU8"/>
+                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="trailing" secondItem="kQO-yI-y7t" secondAttribute="trailing" id="Y42-6J-uxV"/>
+                            <constraint firstItem="kQO-yI-y7t" firstAttribute="trailing" secondItem="idQ-z7-wjd" secondAttribute="trailing" constant="16" id="Z8I-Dy-tjA"/>
+                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="top" secondItem="kQO-yI-y7t" secondAttribute="top" constant="20" id="b67-5C-pcv"/>
+                            <constraint firstItem="idQ-z7-wjd" firstAttribute="top" secondItem="hgN-Zs-SX0" secondAttribute="bottom" constant="8" symbolic="YES" id="hV1-m1-XhC"/>
+                            <constraint firstItem="jJ2-cT-5jX" firstAttribute="height" secondItem="hxT-VS-RSQ" secondAttribute="height" multiplier="0.387324" id="qsn-TN-7pk"/>
+                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="top" secondItem="jJ2-cT-5jX" secondAttribute="bottom" constant="-2" id="tas-fB-Cq1"/>
+                            <constraint firstItem="hgN-Zs-SX0" firstAttribute="trailing" secondItem="kQO-yI-y7t" secondAttribute="trailing" id="vDm-d7-RWv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -183,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Og-Td-HA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2435.0467289719627" y="95.248380129589634"/>
+            <point key="canvasLocation" x="2433.75" y="95.070422535211264"/>
         </scene>
         <!--اضافة مهمة جديدة-->
         <scene sceneID="lXG-ul-DsW">
@@ -194,10 +205,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jhJ-qU-ld9" userLabel="UserinputStackView">
-                                <rect key="frame" x="10" y="54" width="300" height="354"/>
+                                <rect key="frame" x="10" y="54" width="300" height="375"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0E6-fa-mrn" userLabel="ImageStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="186.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="207.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6dF-Tp-22p">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="140"/>
@@ -206,7 +217,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otf-EF-BF3">
-                                                <rect key="frame" x="0.0" y="140" width="300" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="140" width="300" height="67.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="تغير الصورة"/>
                                                 <connections>
@@ -216,7 +227,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-Zd-Yld" userLabel="titleStackView">
-                                        <rect key="frame" x="0.0" y="196.5" width="300" height="68"/>
+                                        <rect key="frame" x="0.0" y="217.5" width="300" height="68"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-nC-QYm">
                                                 <rect key="frame" x="208.5" y="0.0" width="91.5" height="26"/>
@@ -237,7 +248,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bmV-j0-wC6" userLabel="detailsStackView">
-                                        <rect key="frame" x="0.0" y="274.5" width="300" height="79.5"/>
+                                        <rect key="frame" x="0.0" y="295.5" width="300" height="79.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تفاصيل المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-Yh-iPN">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="21.5"/>
@@ -257,9 +268,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coJ-8O-nLl">
-                                <rect key="frame" x="10" y="428" width="300" height="71"/>
+                                <rect key="frame" x="10" y="449" width="300" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="woG-G6-YvI"/>
+                                    <constraint firstAttribute="height" constant="50" id="woG-G6-YvI"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="اضافة"/>
@@ -364,7 +375,9 @@
     <resources>
         <image name="Image" width="300" height="168"/>
         <image name="list.bullet.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -382,9 +395,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

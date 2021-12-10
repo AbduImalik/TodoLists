@@ -49,7 +49,16 @@ class AddNewViewController: UIViewController {
     
     @IBAction func addButtonClicked(_ sender: Any) {
         if isCreation{
-            let TodoAdd = Todo(tilte: titleTextField.text!, image : todoImageView.image, details: detailsTextView.text)
+            //date creation
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yy/MM/dd h:m a"
+
+            dateFormatter.locale = Locale(identifier: "ar")
+
+            let dateStr = dateFormatter.string(from: date)
+
+            let TodoAdd = Todo(tilte: titleTextField.text!, image : todoImageView.image, details: detailsTextView.text,date: dateStr)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AddNewTodo"), object: nil, userInfo: ["addedTodo":TodoAdd])
             
             let alert = UIAlertController(title: "تمت الاضافة", message: "تم اضافة المهمة بنجاح", preferredStyle: UIAlertController.Style.alert)
@@ -66,7 +75,15 @@ class AddNewViewController: UIViewController {
                         
         }else{
             //edit todo
-            let todo = Todo(tilte: titleTextField.text!, image:todoImageView.image, details: detailsTextView.text)
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yy/MM/dd h:m a"
+
+            dateFormatter.locale = Locale(identifier: "ar")
+
+            let dateStr = dateFormatter.string(from: date)
+
+            let todo = Todo(tilte: titleTextField.text!, image:todoImageView.image, details: detailsTextView.text,date: dateStr)
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentTodoEdited"), object: nil, userInfo: ["EditedTodo":todo,"editedTodoIndex":editedTodoIndex!])
             
