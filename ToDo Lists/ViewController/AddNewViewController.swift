@@ -87,7 +87,7 @@ class AddNewViewController: UIViewController {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CurrentTodoEdited"), object: nil, userInfo: ["EditedTodo":todo,"editedTodoIndex":editedTodoIndex!])
             
-            let alert = UIAlertController(title: "تم العديل", message: "تم التعديل بنجاح", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "تم التعديل", message: "تم التعديل بنجاح", preferredStyle: UIAlertController.Style.alert)
             
             let closeAction = UIAlertAction(title: "اغلاق", style: UIAlertAction.Style.cancel) { _ in
                 self.navigationController?.popViewController(animated: true)
