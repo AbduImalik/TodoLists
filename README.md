@@ -1,4 +1,4 @@
-# TodoLists Using CoreDate
+# TodoLists Using CoreData
 First Project in Tuwiq1000 BootCamp 
 
 
