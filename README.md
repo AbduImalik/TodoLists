@@ -39,4 +39,3 @@ First Project in Tuwiq1000 BootCamp
 
 
 
-![Screen Shot 1443-05-06 at 5 18 15 PM](https://user-images.githubusercontent.com/89999862/145588334-58c2afcf-4a25-45f0-91f4-a2d1fc08630f.png)
